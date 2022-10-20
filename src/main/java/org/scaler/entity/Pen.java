@@ -1,16 +1,24 @@
-package org.scaler;
+package org.scaler.entity;
+
+import org.scaler.enums.Color;
+import org.scaler.enums.PenType;
+import org.scaler.strategies.writestrategy.WriteBehaviour;
 
 public abstract class Pen {
     private String name;
     private String company;
     private Integer price;
     private PenType penType;
+    private WriteBehaviour writeBehaviour;
 
-    public Pen(PenType penType){
+    public Pen(PenType penType, WriteBehaviour writeBehaviour){
         this.penType = penType;
+        this.writeBehaviour = writeBehaviour;
     }
 
-    public abstract void write();
+    public void write(){
+        this.writeBehaviour.write();
+    }
     public abstract Color getColor();
 
     public String getName() {

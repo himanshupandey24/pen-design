@@ -1,4 +1,4 @@
-package org.scaler;
+package org.scaler.enums;
 
 public enum Color {
     RED,
